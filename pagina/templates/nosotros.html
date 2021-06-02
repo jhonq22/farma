@@ -1,0 +1,59 @@
+ {% extends 'index.html' %}
+
+{% load static %}
+
+{% block titulo %} Farmapatria {% endblock titulo %}
+
+
+{% block contenido %}
+
+
+ <main class="site-content">
+                <div class="page_header d-flex align-items-center">
+                    <div class="container">
+                        <section>
+                            <h2>Nosotros.</h2>
+                            <div class="breadcrumbs">
+                                <a href="#">Inicio</a>
+                                <span>Nosotros</span>
+                            </div>
+                        </section>
+                    </div>
+                </div><!-- /.page_header -->
+
+
+                <div class="about-section mb-5">
+                    <div class="container">
+                        <div class="row justify-content-xl-between ">
+                            <div class="col-xl-5 pr-xl-0 text-sm-left text-center">
+                                <div class="row">
+                                    <div class="col-xl-12 col-md-6 mb-xl-5">
+                                        <img src="{% static 'img/nosotros.jpg' %}" alt="About us">
+                                    </div>
+                                    <div class="col-xl-12 col-md-6 text-xl-right mt-3 mt-md-0">
+                                     
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6">
+                                <section>
+                                    <h2>Nosotros</span></h2>
+                                    <p>Durante los años, 2015 y 2016, el Equipo Farmacopea, de FARMAPATRIA,C.A. ha ejecutado una de las tareas más importantes, como ha sido, el contacto y relación con investigadores, productores y procesadores de plantas medicinales y productos naturales, en gran parte del territorio nacional. A través de visitas, se pudo adelantar el primer directorio de instituciones públicas y privadas en esta área, así como también de personas vinculadas a esta actividad. En estos encuentros convertidos en intercambio de saberes y experiencias, se ha encontrado un caudal de conocimientos tanto científicos como técnicos y una gran sabiduría popular realmente invalorable, que es parte del patrimonio cultural y la farmacopea del país.</p>
+                                    
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.about-section -->
+           
+
+            
+             
+                  
+              
+            </main><!-- /.site-content -->
+
+
+
+
+{% endblock contenido %}

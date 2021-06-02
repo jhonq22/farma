@@ -1,0 +1,59 @@
+ {% extends 'index.html' %}
+
+{% load static %}
+
+{% block titulo %} Farmapatria {% endblock titulo %}
+
+
+{% block contenido %}
+
+ <main class="site-content">
+                <div class="page_header d-flex align-items-center">
+                    <div class="container">
+                        <section>
+                            <h2>Eventos.</h2>
+                            <div class="breadcrumbs">
+                                <a href="#">Inicio</a>
+                                <span>Eventos</span>
+                            </div>
+                        </section>
+                    </div>
+                </div><!-- /.page_header -->
+
+
+                   <div class="blog_posts">
+                    <div class="container-md">
+                        
+                        <div class="row">
+                        {% for evento in eventos %}
+                            <div class="col-xl-6">
+                                <div class="blog-card d-flex flex-sm-row flex-column">
+                                    <div class="the_post_thumbnail">
+                                        <a href="{{ evento.slug }}"><img src="{{evento.imagen_principal.url}}" style="width: 350; height: 400px;" alt="Blog Title" /></a>
+                                    </div>
+                                    <div class="blog-card-body">
+                                        <span class="the_date">{{evento.fecha_publicacion}}</span>
+                                        <h2 class="the_title">
+                                            <a href="{{ evento.slug }}">{{evento.titulo}}.</a>
+                                        </h2>
+                                        <a href="{{ evento.slug }}" class="the_permalink">Ir Publicación <i class="icofont-arrow-right"></i></a>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+
+                            {% endfor %} 
+                            
+                           
+                            
+                           
+                        </div>
+                    </div>
+             
+            </main><!-- /.site-content -->
+
+
+
+
+
+{% endblock contenido %}

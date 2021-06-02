@@ -1,0 +1,81 @@
+ {% extends 'index.html' %}
+
+{% load static %}
+
+{% block titulo %} Farmapatria {% endblock titulo %}
+
+
+{% block contenido %}
+
+ <main class="site-content">
+                <div class="page_header d-flex align-items-center">
+                    <div class="container">
+                        <section>
+                            <h2>Galeria.</h2>
+                            <div class="breadcrumbs">
+                                <a href="#">Inicio</a>
+                                <span>Galeria</span>
+                            </div>
+                        </section>
+                    </div>
+                </div><!-- /.page_header -->
+                <div class="blog_posts">
+                    <div class="container-md">
+
+ 
+
+
+     <div class="container">
+    <div class="row pt-5 m-auto">
+
+   {% for galeria in galerias %}
+      <div class="col-md-6 col-lg-4 pb-3">
+
+     <a href="{{ galeria.id}}">
+            <div class="col-item">
+                <figure class="c4-izmir img-fluid rounded c4-border-cc-3 c4-image-zoom-out c4-gradient-bottom-right"  tabindex="0" style="--primary-color: #7303c0; --secondary-color: #ec38bc;">
+                  <img src="{{galeria.imagen_principal.url}}" alt="Sample Image" style="height: 300px; width: 450px;" />
+                  <figcaption>
+                    <div class="c4-rotate-up-right c4-delay-200">
+                      <h2>
+                        {{ galeria.titulo}}
+                      </h2>
+                    </div>
+                    <div class="c4-rotate-down-left c4-delay-200">
+                   
+                    </div>
+                  </figcaption>
+                </figure>
+              </div>
+            </a>
+
+    </div>
+
+     {% endfor %} 
+
+ 
+    </div>
+  </div>
+
+
+
+                     
+                    </div>
+                    <nav class="navigation pagination m-5" >
+                        <div class="nav-links">
+                            <a class="prev page-numbers" href="#"><i class="icofont-arrow-left"></i></a>
+                            <a class="page-numbers" href="#">1</a>
+                            <span class="page-numbers current">2</span>
+                            <a class="page-numbers" href="#">3</a>
+                            <a class="next page-numbers" href="#"><i class="icofont-arrow-right"></i></a>
+                        </div>
+                    </nav>
+                </div>
+             
+            </main><!-- /.site-content -->
+
+
+
+
+
+{% endblock contenido %}

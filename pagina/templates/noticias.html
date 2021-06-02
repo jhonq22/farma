@@ -1,0 +1,81 @@
+ {% extends 'index.html' %}
+
+{% load static %}
+
+{% block titulo %} Farmapatria {% endblock titulo %}
+
+
+{% block contenido %}
+
+ <main class="site-content">
+                <div class="page_header d-flex align-items-center">
+                    <div class="container">
+                        <section>
+                            <h2>Noticias.</h2>
+                            <div class="breadcrumbs">
+                                <a href="#">Inicio</a>
+                                <span>Noticias</span>
+                            </div>
+                        </section>
+                    </div>
+                </div><!-- /.page_header -->
+                <div class="blog_posts">
+                    <div class="container-md">
+
+ 
+
+
+     <div class="container">
+    <div class="row pt-5 m-auto">
+
+   {% for noticia in noticias %}
+      <div class="col-md-6 col-lg-4 pb-3">
+
+        <!-- Add a style="height: XYZpx" to div.card to limit the card height and display scrollbar instead -->
+        <div class="card card-custom bg-white border-white border-0" style="height: 450px">
+          <div class="card-custom-img" style="background-image: url({{noticia.imagen_principal.url}});"></div>
+          <div class="card-custom-avatar">
+            <img class="img-fluid" src="{% static 'img/logonoticia.png' %}" alt="Avatar" />
+          </div>
+          <div class="card-body" style="overflow-y: auto">
+            <h4 class="card-title">{{noticia.titulo}}</h4>
+            <p class="text-center">{{noticia.contenido|safe}} 
+          </div>
+
+          <div class="card-footer" style="background: inherit; border-color: inherit;">
+               <button class="btn btn-primary" onclick="location.href='{{ noticia.slug }}'" type="button">
+        Ver Publicación</button>
+
+          </div>
+        </div>
+
+    </div>
+
+     {% endfor %} 
+
+ 
+    </div>
+  </div>
+
+
+
+                     
+                    </div>
+                    <nav class="navigation pagination m-5" >
+                        <div class="nav-links">
+                            <a class="prev page-numbers" href="#"><i class="icofont-arrow-left"></i></a>
+                            <a class="page-numbers" href="#">1</a>
+                            <span class="page-numbers current">2</span>
+                            <a class="page-numbers" href="#">3</a>
+                            <a class="next page-numbers" href="#"><i class="icofont-arrow-right"></i></a>
+                        </div>
+                    </nav>
+                </div>
+             
+            </main><!-- /.site-content -->
+
+
+
+
+
+{% endblock contenido %}
